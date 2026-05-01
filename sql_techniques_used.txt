@@ -1,0 +1,9 @@
+SQL Techniques Used:
+* Joins
+* CTEs
+* Window Functions
+* Views
+* Stored Procedures
+* Aggregations
+* Ranking Functions
+* Subqueries
