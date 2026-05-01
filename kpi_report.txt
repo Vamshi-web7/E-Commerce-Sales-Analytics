@@ -1,0 +1,6 @@
+KPIs Tracked:
+* Total Revenue
+* Monthly Sales Growth
+* Customer Retention Rate
+* Top Selling Products
+* Revenue Per Customer
