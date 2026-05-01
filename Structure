@@ -1,0 +1,35 @@
+E-Commerce Sales Analytics
+│
+├── README.md
+│
+├── SQL_Queries/
+│ ├── sales_analysis.sql
+│ ├── customer_segmentation.sql
+│ ├── retention_analysis.sql
+│ ├── top_products.sql
+│ ├── revenue_growth.sql
+│ ├── window_functions.sql
+│ ├── cte_analysis.sql
+│ └── stored_procedures.sql
+│
+├── Database/
+│ ├── ecommerce_schema.sql
+│ ├── ecommerce_data.sql
+│ └── views.sql
+│
+├── Dashboard/
+│ ├── ecommerce_dashboard.pbix
+│ └── dashboard_notes.txt
+│
+├── Screenshots/
+│ ├── sales_dashboard.png
+│ ├── customer_analysis.png
+│ └── revenue_trends.png
+│
+├── Documentation/
+│ ├── project_summary.txt
+│ └── sql_techniques_used.txt
+│
+└── Results/
+├── kpi_report.txt
+│ └── business_insights.txt
