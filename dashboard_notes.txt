@@ -1,0 +1,10 @@
+Dashboard KPIs:
+* Total Revenue
+* Monthly Sales Growth
+* Customer Retention Rate
+* Top Products
+* Regional Sales
+Charts Used:
+* Revenue Trend Chart
+* Product Performance Analysis
+* Customer Segmentation Dashboard
