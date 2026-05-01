@@ -1,0 +1,92 @@
+# sales_analysis.sql
+SELECT
+category,
+SUM(sales_amount) AS total_sales
+FROM orders
+GROUP BY category
+ORDER BY total_sales DESC;
+=================================================
+# customer_segmentation.sql
+SELCT *
+customer_id,
+COUNT(order_id) AS total_orders,
+SUM(sales_amount) AS total_spent
+FROM orders
+GROUP BY customer_id
+ORDER BY total_spent DESC;
+==================================================
+# retention_analysis.sql
+SELECT
+customer_id,
+COUNT(DISTINCT order_date) AS active_months
+FROM orders
+GROUP BY customer_id
+HAVING COUNT(DISTINCT order_date) > 1;
+==================================================
+# top_products.sql
+SELECT
+product_name,
+SUM(sales_amount) AS revenue
+FROM orders
+GROUP BY product_name
+ORDER BY revenue DESC
+LIMIT 10;
+==================================================
+# revenue_growth.sql
+SELECT
+YEAR(order_date) AS year,
+MONTH(order_date) AS month,
+SUM(sales_amount) AS monthly_revenue
+FROM orders
+GROUP BY year, month
+ORDER BY year, month;
+==================================================
+# window_functions.sql
+SELECT
+customer_id,
+sales_amount,
+RANK() OVER(ORDER BY sales_amount DESC) AS sales_rank
+FROM orders;
+==================================================
+# cte_analysis.sql
+WITH monthly_sales AS (
+SELECT
+MONTH(order_date) AS month,
+SUM(sales_amount) AS revenue
+FROM orders
+GROUP BY month
+)
+SELECT *
+FROM monthly_sales
+ORDER BY revenue DESC;
+==================================================
+# stored_procedures.sql
+CREATE PROCEDURE GetTopCustomers()
+BEGIN
+SELECT
+customer_id,
+SUM(sales_amount) AS total_spent
+FROM orders
+GROUP BY customer_id
+ORDER BY total_spent DESC
+LIMIT 5;
+END;
+==================================================
+# ecommerce_schema.sql
+CREATE TABLE orders (
+order_id INT,
+customer_id INT,
+product_name VARCHAR(100),
+category VARCHAR(50),
+sales_amount DECIMAL(10,2),
+region VARCHAR(50),
+order_date DATE
+);
+==================================================
+# views.sql
+CREATE VIEW customer_revenue AS
+SELECT
+customer_id,
+SUM(sales_amount) AS total_revenue
+FROM orders
+GROUP BY customer_id;
